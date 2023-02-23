@@ -1,0 +1,29 @@
+.container {
+    height: 473px;
+    width: 100%;
+  background-color: #000;
+  border-radius: 32px;
+  padding: 70px;
+    background-image: url("../../../../assets/BgForSlider.jpg");
+    background-repeat: no-repeat;
+  background-position: right;
+  .content {
+    max-width: 585px;
+    margin-bottom: 165px;
+    .h2 {
+      font-family: "Nekst-Black";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 54px;
+      line-height: 90%;
+      color: #fff;
+    }
+    .h3{
+        margin-top: 32px;
+        color: #fff;
+    }
+    .btn{
+       margin-top: 32px;
+    }
+  }
+}

@@ -1,0 +1,97 @@
+@import "../../styles//variables.scss";
+.btn {
+  border-radius: 40px;
+}
+
+.primary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px 12px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: $orange;
+
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+
+  width: 174px;
+  height: 48px;
+
+  transition: $transition;
+
+  &:hover {
+    transition: $transition;
+    background-color: #000;
+  }
+  &:disabled {
+    background: rgba(255, 149, 20, 0.4);
+    &:hover {
+      cursor: auto;
+    }
+  }
+  &:active {
+    background: $dark-grey;
+  }
+  &Big {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background: $orange;
+    color: #fff;
+    padding: 8px 16px 12px;
+    font-family: "Nekst-Black";
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    width: 426px;
+    height: 68px;
+    transition: $transition;
+
+    &:hover {
+      transition: $transition;
+      background-color: #000;
+    }
+
+    &:disabled {
+      background: rgba(255, 149, 20, 0.4);
+      cursor: auto;
+    }
+    &:active {
+      background: $dark-grey;
+    }
+  }
+}
+.transparent {
+  color: $orange;
+  padding: 12px 24px;
+  border: 1px solid $orange;
+  transition: $transition;
+  width: 174px;
+  height: 48px;
+  font-weight: 700;
+  background-color: #fff;
+  cursor: pointer;
+  &:hover {
+    color: #fff;
+    transition: $transition;
+    background-color: $orange;
+  }
+  &:disabled {
+    opacity: 0.4;
+    cursor: auto;
+    &:hover {
+      color: $orange;
+      background: #fff;
+    }
+  }
+  &:active {
+    background: #ffa83d;
+  }
+}

@@ -1,0 +1,44 @@
+.slick-dots {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+ bottom: 0;
+ margin-bottom: 44px;
+}
+.slick-active {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.slick-dots li {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20px;
+  width: 20px;
+}
+.custom {
+  height: 6px;
+  width: 6px;
+  background: #fff;
+  opacity: 0.4;
+  border-radius: 4px;
+  position: relative;
+}
+
+.slick-dots .slick-active .custom {
+  background-color: #fff;
+
+  width: 12px;
+  height: 12px;
+}
+
+.inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
