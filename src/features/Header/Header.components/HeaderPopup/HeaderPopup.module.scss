@@ -1,0 +1,32 @@
+@import '../../../../styles/variables.scss';
+
+.popup {
+    top: 10px;
+    left: -18px;
+    
+    &-element {
+        width: 243px;
+        transition: $transition;
+        color: #000;
+        text-align: start;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        padding: 8px 16px;
+    
+        &:hover{
+            background: $dark-white;
+            opacity: 0.9;   
+            transition: $transition;
+        }
+    
+        &:first-of-type {
+            border-radius: 15px 15px 0 0;
+        }
+        &:last-of-type {
+            border-radius: 0 0 15px 15px;
+            padding-bottom: 8px;
+        }
+    }
+}

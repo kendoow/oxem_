@@ -1,40 +1,66 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react'
+import { Title } from '../../components/Title/Title'
 
-import { CalculatorInput } from './Calculator.components/CalculatorInput/CalculatorInput';
+import { CalculatorInput } from './Calculator.components/CalculatorInput/CalculatorInput'
 import { CalculatorText } from './Calculator.components/CalculatorText/CalculatorText'
-import { calculatorTextTitle, startPrice, startTimeMonth } from './Calculator.const'
 
 
-import styles from './Calculator.module.scss';
+
+import styles from './Calculator.module.scss'
+
+import { useCalculator } from './Calculator.hooks'
 
 export const Calculator = () => {
-    const [price, setPrice] = useState<number>(startPrice);
-    const [firstСontribution, setFirstСontribution] = useState<number>(price * 0.87);
-    const [timeMonth, setTimeMonth] = useState<number>(startTimeMonth);
+    const { price,
+        setPrice,
+        percents,
+        initialPayment,
+        setInitialPayment,
+        duration,
+        setDuration,
+        overallAmount,
+        monthPay,
+    } = useCalculator()
 
-   useEffect(() => {
-        setFirstСontribution(() => price * 0.13);
-    }, [price])
-
-    useEffect(() => {
-        if (timeMonth > startTimeMonth) {
-            setPrice(() => startPrice * (timeMonth - startTimeMonth));
-        }
-    }, [timeMonth])
 
     return (
         <section>
+            <Title tag='h2' className={styles.title} >Рассчитайте стоимость автомобиля в лизинг</Title>
             <div>
-                <CalculatorInput value={price} setValue={setPrice} />
-                <CalculatorInput value={firstСontribution} setValue={setFirstСontribution} />
-                <CalculatorInput value={timeMonth} setValue={setTimeMonth} />
+                <CalculatorInput
+                    extraValue={'₽'}
+                    min={1000000}
+                    max={6000000}
+                    title='Стоимость автомобиля'
+                    value={price}
+                    setValue={setPrice}
+                />
+                <CalculatorInput
+                    extraValue={percents}
+                    min={1000000}
+                    max={60000000}
+                    title='Первоначальный взнос'
+                    value={initialPayment}
+                    setValue={setInitialPayment}
+                />
+                <CalculatorInput
+                    extraValue={'мес.'}
+                    min={1}
+                    max={60}
+                    title='Срок лизинга'
+                    value={duration}
+                    setValue={setDuration} />
             </div>
             <div>
-                {
-                    calculatorTextTitle.map((title) => {
-                        return <CalculatorText key={React.useId()} title={title} price={100} />
-                    })
-                }
+
+                <CalculatorText
+                    key={React.useId()}
+                    title={'Сумма договора лизинга'}
+                    price={overallAmount} />
+                <CalculatorText
+                    key={React.useId()}
+                    title={'Ежемесячный платеж от'}
+                    price={monthPay} />
                 {/* <Button /> */}
             </div>
         </section>

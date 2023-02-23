@@ -1,22 +1,25 @@
-import React, { useCallback } from 'react';
+import React, { useCallback } from 'react'
 import type { ICalculatorInputProps } from './CalculatorInput.typings'
-import styles from './CalculatorInput.module.scss';
+import styles from './CalculatorInput.module.scss'
 import { Input } from '../../../../components/Input/Input'
 
-export const CalculatorInput = ({ value, setValue } : ICalculatorInputProps) => {
+export const CalculatorInput = ({ value, setValue, title, min, max, extraValue }: ICalculatorInputProps) => {
 
 
-    if (value === undefined || setValue === undefined) return null;
+    if (value === undefined || setValue === undefined) return null
 
     const handleChangePrice = useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
-        setValue(Number(event.target.value))
-    }, []);
+        setValue(+(event.target.value))
+    }, [])
 
     return (
         <div className={styles.calculatorInput}>
-            <p className={styles.calculatorInputTitle}>Text</p>
-            <Input value={value} onChange={handleChangePrice} />
-            <Input type="range" value={value} onChange={handleChangePrice} />
+            <p className={styles.calculatorInputTitle}>{title}</p>
+            <div className={styles.container}>
+                <Input className={styles.calculatorInputField} value={value} onChange={handleChangePrice} />
+                <span className={styles.calculatorInputExtra}>{extraValue}</span>
+            </div>
+            <Input min={min} max={max} className={styles.calculatorInputRange} type="range" value={value} onChange={handleChangePrice} />
         </div>
     )
 }
