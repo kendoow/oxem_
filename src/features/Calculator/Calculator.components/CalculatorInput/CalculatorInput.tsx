@@ -3,7 +3,7 @@ import type { ICalculatorInputProps } from './CalculatorInput.typings'
 import styles from './CalculatorInput.module.scss'
 import { Input } from '../../../../components/Input/Input'
 
-export const CalculatorInput = ({ value, setValue, title, min, max, extraValue }: ICalculatorInputProps) => {
+export const CalculatorInput = ({ value, setValue, title, min, max, extraValue, name }: ICalculatorInputProps) => {
 
 
     if (value === undefined || setValue === undefined) return null
@@ -16,7 +16,7 @@ export const CalculatorInput = ({ value, setValue, title, min, max, extraValue }
         <div className={styles.calculatorInput}>
             <p className={styles.calculatorInputTitle}>{title}</p>
             <div className={styles.container}>
-                <Input className={styles.calculatorInputField} value={value} onChange={handleChangePrice} />
+                <Input name={name} className={styles.calculatorInputField} value={value} onChange={handleChangePrice} />
                 <span className={styles.calculatorInputExtra}>{extraValue}</span>
             </div>
             <Input min={min} max={max} className={styles.calculatorInputRange} type="range" value={value} onChange={handleChangePrice} />

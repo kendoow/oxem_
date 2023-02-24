@@ -1,3 +1,5 @@
+@import '../../../../styles/variables.scss';
+
 .calculatorText {
     display: flex;
     flex-direction: column;
@@ -5,11 +7,14 @@
     justify-content: flex-start;
 
     &Title {
+        color:$dark-grey;
         font-size: 16px;
         line-height: 150%;
     }
 
     &Price {
+        color:$dark-grey;
+        font-family: 'Nekst-Black';
         font-style: normal;
         font-weight: 900;
         font-size: 54px;

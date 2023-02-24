@@ -1,0 +1,16 @@
+.container {
+    margin-top: 32px;
+  display: flex;
+  max-width: 112px;
+  align-items: center;
+  gap: 16px;
+  .circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #e7e7e7;
+    border-radius: 200px;
+    width: 48px;
+    height: 48px;
+  }
+}

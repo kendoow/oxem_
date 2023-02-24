@@ -8,3 +8,18 @@
   color: #111111;
   margin-bottom: 32px;
 }
+.container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    justify-content: space-between  !important;
+    align-items: center;
+    
+    &Text{
+        margin-top: 54px;
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        gap: 32px;
+        align-items: center;
+       
+    }
+}

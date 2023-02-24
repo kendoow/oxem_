@@ -1,0 +1,59 @@
+@import "../../../../styles/variables.scss";
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+  margin-top: 44px;
+  margin-bottom: 32px;
+  .inputPlaceholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 12px;
+    margin-bottom: 4px;
+    color: $transition;
+    display: none;
+    position: absolute;
+    top: 8px;
+    left: 24px;
+  }
+
+  .inputContainer {
+    position: relative;
+    width: 311px;
+
+    .input {
+      box-sizing: border-box;
+      padding: 24px;
+      background: #f3f3f4;
+      border-radius: 16px;
+      width: 100%;
+      height: 100%;
+      color: #575757;
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+      border: 1px solid #fff;
+      transition: $transition;
+      &:focus ~ .inputPlaceholder {
+        display: block;
+      }
+      &:hover {
+        transition: $transition;
+        background: #eaeaeb;
+        font-size: 16px;
+        line-height: 16px;
+      }
+
+      &:focus {
+        padding-bottom: 6px;
+        transition: $transition;
+        background: white;
+        border: 1px solid $orange;
+      }
+
+      &:disabled {
+        opacity: 0.4;
+      }
+    }
+  }
+}

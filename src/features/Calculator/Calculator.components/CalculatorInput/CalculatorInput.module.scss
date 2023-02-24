@@ -2,7 +2,6 @@
 .calculatorInput {
   display: flex;
   flex-direction: column;
-  max-width: 427px;
   position: relative;
   &Title {
     color: $dark-grey;
@@ -11,6 +10,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 20px;
+    margin-bottom: 24px;
   }
   .container{
     position: relative;

@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 29px;
+    border: 2px solid #F3F3F4;
+    border-radius: 16px;
+    .description{
+        max-width: 350px;
+        font-family: 'Gilroy';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 150%;
+    }
+}

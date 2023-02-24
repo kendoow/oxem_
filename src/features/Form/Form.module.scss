@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+
+  margin-top: 30%;
+  justify-content: center;
+  .title {
+    font-family: "Nekst-Black";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 90%;
+    margin-bottom: 24px;
+  }
+  .description {
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    max-width: 460px;
+    color: #575757;
+  }
+}
+.links{
+    display: flex;
+    justify-content: center;
+}

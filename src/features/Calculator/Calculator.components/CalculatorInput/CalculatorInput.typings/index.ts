@@ -7,4 +7,5 @@ export interface ICalculatorInputProps extends React.DetailedHTMLProps<React.HTM
     max:number;
     min:number;
     extraValue: number | string;
+    name:string
 }

@@ -1,0 +1,60 @@
+@import "../../styles/variables.scss";
+.modal {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: bottom 0.3s ease-in-out;
+  z-index: 2;
+  &Open {
+    bottom: 0;
+  }
+
+  &Content {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    padding: 20px;
+    border-radius: 32px 32px 0px 0px;
+    margin-top: 14%;
+    display: flex;
+    justify-content: center;
+    padding-bottom:50%;
+  }
+
+  &Close {
+    position: absolute;
+    float: right;
+    cursor: pointer;
+    background-color: #f3f3f4;
+    width: 48px;
+    height: 48px;
+    border-radius: 100px;
+    margin-right: 48px;
+    margin-top: 48px;
+    top: 0;
+    right: 0;
+    .line1 {
+      left: 15px;
+      position: absolute;
+      width: 18px;
+      height: 1.5px;
+      background-color: #828282;
+      border-radius: 5px;
+      transform: rotate(45deg);
+    }
+
+    .line2 {
+      left: 15px;
+      position: absolute;
+      width: 18px;
+      height: 1.5px;
+      background-color: #828282;
+      border-radius: 5px;
+      transform: rotate(-45deg);
+    }
+  }
+}
