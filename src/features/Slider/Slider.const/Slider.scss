@@ -53,6 +53,15 @@
   z-index: 1;
   right: 44px;
 }
+.slick-next {
+  left: 95%;
+}
 .slick-prev {
-  left: 93%;
+  left: 92%;
+}
+@media (max-width: 1024px) {
+  .slick-next,
+  .slick-prev {
+    display: none !important;
+  }
 }

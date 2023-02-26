@@ -1,4 +1,4 @@
-import { ButtonArrow } from '../components/ButtonArrow/ButtonArrow'
+
 import Slider from "../features/Slider/Slider"
 import { Header } from '../features/Header/Header'
 
@@ -12,7 +12,6 @@ const App = () => {
         <div className={styles.container}>
             <Header />
             <Slider />
-            <ButtonArrow />
             <Calculator />
         </div>
     )

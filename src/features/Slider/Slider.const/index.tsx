@@ -1,4 +1,5 @@
 import React from 'react'
+import { ButtonArrowNext, ButtonArrowPrev } from '../../../components/ButtonArrow/ButtonArrow'
 import './Slider.scss'
 
 

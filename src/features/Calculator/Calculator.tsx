@@ -8,10 +8,9 @@ import styles from './Calculator.module.scss'
 import Modalform from '../Form/Form'
 import { useCalculator } from './Calculator.hooks'
 import Button from '../../components/Button/Button'
-import { Formik, Form } from 'formik'
-import { validationSchema } from './Calculator.const'
 import { useState } from 'react'
 import CalculatorInputPersents from './Calculator.components/CalculatorInputPersents/CalculatorInputPersents'
+
 
 export const Calculator = () => {
     const { price,
@@ -36,11 +35,11 @@ export const Calculator = () => {
     return (
         <>
             <Modalform active={activeModal} setActive={setActiveModal} />
-            <section>
+            <section className={styles.wrapper}>
                 <Title tag='h2' className={styles.title} >Рассчитайте стоимость автомобиля в лизинг</Title>
                 <div className={styles.container}>
 
-
+             
 
                     <CalculatorInput
                         id='price'

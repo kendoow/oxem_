@@ -31,8 +31,10 @@ export const Header = () => {
     }
     return (
         <div className={styles.container}>
+
             <Form active={activeModal} setActive={setActiveModal} />
             <div className={styles.logoBlock}>
+
                 <a className={styles.logoBlockLogo} href='/' target='_blank'>
                     {
                         windowSize > 767
@@ -45,8 +47,6 @@ export const Header = () => {
                 <p className={styles.logoBlockDecription}>лизинговая компания</p>
             </div>
             <BurgerMenu>
-
-
                 <div className={styles.links} ref={ref}>
                     <div className={styles.linksBlock}>
                         {

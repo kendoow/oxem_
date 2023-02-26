@@ -25,8 +25,8 @@ export const useCalculator = () => {
         }
         if (price < 1000000) {
             setPrice(1000000)
-        } 
-         if (price > 6000000) {
+        }
+        if (price > 6000000) {
             setPrice(6000000)
         }
 
@@ -48,7 +48,7 @@ export const useCalculator = () => {
 
             setInitialPayment(+((price * 10) / 100).toFixed())
             setPercents(10)
-        }  if (percents > 60) {
+        } if (percents > 60) {
 
             setInitialPayment(+((price * 60) / 100).toFixed())
             setPercents(60)

@@ -29,6 +29,7 @@
 @media (max-width: 767px) {
   .container {
     .title {
+        text-align: center;
       font-family: "Nekst-Black";
       font-style: normal;
       font-weight: 900;
@@ -36,6 +37,9 @@
       line-height: 20px;
 
       color: #111111;
+    }
+    .description {
+        text-align: center;
     }
   }
 }

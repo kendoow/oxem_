@@ -4,7 +4,7 @@ import { Title } from '../../../../components/Title/Title'
 import Form from '../../../Form/Form'
 import styles from './SliderPage.module.scss'
 import { ISliderPage } from './SliderPage.typings'
-
+import bg from '../../../../assets/BgForSlider.jpg'
 export const SliderPage = ({ main = false, title, desription }: ISliderPage) => {
 
     const [activeModal, setActiveModal] = useState<boolean>(false)
@@ -14,10 +14,12 @@ export const SliderPage = ({ main = false, title, desription }: ISliderPage) => 
     }
     return (
         <>
-        <Form active={activeModal} setActive={setActiveModal} />
+            <Form active={activeModal} setActive={setActiveModal} />
             <div className={styles.container}>
-               
+
+
                 <div className={styles.content}>
+
                     {main
                         ?
                         <Title tag='h1'>
@@ -35,6 +37,7 @@ export const SliderPage = ({ main = false, title, desription }: ISliderPage) => 
                         Оставить заявку
                     </Button>
                 </div>
+
             </div>
         </>
     )
