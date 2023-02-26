@@ -1,7 +1,7 @@
 import whatsappIcon from '../../../../assets/whatsapp-icon.svg'
 import telegramIcon from '../../../../assets/telegram-icon.svg'
 
-import styles from './Formlinks.module.scss'
+import styles from './FormLinks.module.scss'
 
 export const FormLinks = () => {
     return (
