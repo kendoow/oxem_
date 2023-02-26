@@ -6,12 +6,13 @@
   right: 0;
   display: flex;
   justify-content: space-between;
-  max-width: 1344px;
+  max-width: 1440px;
   margin: 0 auto;
-  padding: 21px 0;
+  padding: 19px 0;
   background-color: #fff;
   z-index: 1;
-
+  padding-left: 48px;
+  padding-right: 48px;
   .logoBlock {
     display: flex;
     align-items: center;
@@ -45,6 +46,10 @@
   .absolute {
     position: relative;
   }
+  .links {
+    display: flex;
+    justify-content: space-between;
+  }
   .linksBlock {
     display: flex;
     justify-content: space-between;
@@ -62,8 +67,53 @@
       &:hover {
         background-color: #f3f3f4;
       }
-      &:nth-last-child(2) {
+      &:nth-last-child(1) {
         margin-right: 24px;
+      }
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 1024px;
+    display: flex;
+    align-items: center;
+    .links {
+      height: 90vh;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .linksBlock {
+      margin-top: 64px;
+      margin-left: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      &Element {
+        margin-bottom: 24px;
+        font-family: "Gilroy";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 36px;
+      }
+    }
+    .mobileBtn {
+      z-index: 3;
+      margin-top: 60%;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    background-color: #000;
+    max-width: 767px;
+    .logoBlock {
+      &Decription {
+        display: none;
       }
     }
   }

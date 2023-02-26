@@ -1,4 +1,9 @@
-.container{
-    margin-top: 100px;
-    margin-bottom: 100px;
+.container {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+@media (max-width: 767px) {
+  .container {
+    margin-top: 73px;   
+  }
 }

@@ -4,15 +4,14 @@ import { Title } from '../../components/Title/Title'
 import { CalculatorInput } from './Calculator.components/CalculatorInput/CalculatorInput'
 import { CalculatorText } from './Calculator.components/CalculatorText/CalculatorText'
 
-
-import * as Yup from "yup"
-
 import styles from './Calculator.module.scss'
-
+import Modalform from '../Form/Form'
 import { useCalculator } from './Calculator.hooks'
 import Button from '../../components/Button/Button'
-import { Formik, Form, Field } from 'formik'
+import { Formik, Form } from 'formik'
 import { validationSchema } from './Calculator.const'
+import { useState } from 'react'
+import CalculatorInputPersents from './Calculator.components/CalculatorInputPersents/CalculatorInputPersents'
 
 export const Calculator = () => {
     const { price,
@@ -24,76 +23,68 @@ export const Calculator = () => {
         setDuration,
         overallAmount,
         monthPay,
+        initialMaxPay,
+        initialMinPay
     } = useCalculator()
+    const [activeModal, setActiveModal] = useState<boolean>(false)
 
+    const modalHandler = () => {
+        setActiveModal(true)
+    }
 
 
     return (
-        <section>
-            <Title tag='h2' className={styles.title} >Рассчитайте стоимость автомобиля в лизинг</Title>
-            <div className={styles.container}>
+        <>
+            <Modalform active={activeModal} setActive={setActiveModal} />
+            <section>
+                <Title tag='h2' className={styles.title} >Рассчитайте стоимость автомобиля в лизинг</Title>
+                <div className={styles.container}>
 
-                <Formik
-                    initialValues={{
-                        price: 1000000,
-                        initialPayment: 10,
-                        duration: 10
-                    }}
-                    validationSchema={validationSchema}
-                    onSubmit={values => {
-                        console.log(values)
-                    }}
-                >
-                    {({ errors, touched }) => (
 
-                        <Form>
-                            
-                            <CalculatorInput
-                                id='price'
-                                name='price'
-                                extraValue={'₽'}
-                                min={1000000}
-                                max={6000000}
-                                title='Стоимость автомобиля'
-                                value={price}
-                                setValue={setPrice}
-                            />
-                            <CalculatorInput
-                                id='initialPayment'
-                                name='initialPayment'
-                                extraValue={`${percents}%`}
-                                min={1000000}
-                                max={60000000}
-                                title='Первоначальный взнос'
-                                value={initialPayment}
-                                setValue={setInitialPayment}
-                            />
-                            <CalculatorInput
-                                id='duration'
-                                name='duration'
-                                extraValue={'мес.'}
-                                min={1}
-                                max={60}
-                                title='Срок лизинга'
-                                value={duration}
-                                setValue={setDuration} />
 
-                        </Form>
-                    )}
-                </Formik>
-            </div>
+                    <CalculatorInput
+                        id='price'
+                        name='price'
+                        extraValue={'₽'}
+                        min={1000000}
+                        max={6000000}
+                        title='Стоимость автомобиля'
+                        value={price}
+                        setValue={setPrice}
+                    />
+                    <CalculatorInputPersents
+                        min={initialMinPay}
+                        max={initialMaxPay}
+                        value={initialPayment}
+                        percentValue={`${percents}%`}
+                        title={'Первоначальный взнос'}
+                        setValue={setInitialPayment}
+                    />
 
-            <div className={styles.containerText}>
-                <CalculatorText
+                    <CalculatorInput
+                        id='duration'
+                        name='duration'
+                        extraValue={'мес.'}
+                        min={1}
+                        max={60}
+                        title='Срок лизинга'
+                        value={duration}
+                        setValue={setDuration} />
 
-                    title={'Сумма договора лизинга'}
-                    price={overallAmount} />
-                <CalculatorText
+                </div>
 
-                    title={'Ежемесячный платеж от'}
-                    price={monthPay} />
-                <Button extraType='PrimaryBig'>Оставить заявку</Button>
-            </div>
-        </section>
+                <div className={styles.containerText}>
+                    <CalculatorText
+
+                        title={'Сумма договора лизинга'}
+                        price={overallAmount} />
+                    <CalculatorText
+
+                        title={'Ежемесячный платеж от'}
+                        price={monthPay} />
+                    <Button onClick={modalHandler} extraType='PrimaryBig'>Оставить заявку</Button>
+                </div>
+            </section>
+        </>
     )
 }

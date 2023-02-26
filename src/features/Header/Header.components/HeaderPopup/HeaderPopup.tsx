@@ -1,4 +1,4 @@
-import { useState, useId, MouseEvent } from 'react';
+import {  useId, MouseEvent } from 'react';
 import { Popup } from '../../../../components/Popup/Popup'
 import { headerPopupLinksArray } from './HeaderPopup.const'
 import { IHeaderPopupProps } from './HeaderPopup.typings';
@@ -13,15 +13,13 @@ export const HeaderPopup = ({ className, ...props}: IHeaderPopupProps) => {
     return (
         <Popup className={styles['popup']} {...props}>
             {
-                headerPopupLinksArray.map((text) => <a 
+                headerPopupLinksArray.map((text) => <div
                         className={styles['popup-element']}
-                        target='_blank' 
-                        href='#' 
                         onClick={handleResetClickLink}
                         key={useId()}
                     >
                         {text}
-                    </a>
+                    </div>
                 )
             }
         </Popup>        

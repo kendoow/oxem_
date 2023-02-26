@@ -1,23 +1,47 @@
-@import '../../../../styles/variables.scss';
+@import "../../../../styles/variables.scss";
 
 .calculatorText {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: flex-start;
+
+  &Title {
+    color: $dark-grey;
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  &Price {
+    color: $dark-grey;
+    font-family: "Nekst-Black";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 54px;
+    line-height: 90%;
+  }
+}
+
+@media (max-width: 767px) {
+  .calculatorText {
     display: flex;
     flex-direction: column;
     gap: 8px;
     justify-content: flex-start;
 
     &Title {
-        color:$dark-grey;
-        font-size: 16px;
-        line-height: 150%;
+      color: $dark-grey;
+      font-size: 16px;
+      line-height: 150%;
     }
 
     &Price {
-        color:$dark-grey;
-        font-family: 'Nekst-Black';
-        font-style: normal;
-        font-weight: 900;
-        font-size: 54px;
-        line-height: 90%;
+      font-family: "Nekst-Black";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 20px;
+      color: #333333;
     }
+  }
 }

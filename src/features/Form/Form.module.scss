@@ -1,8 +1,7 @@
 .container {
   display: flex;
   flex-direction: column;
-
-  margin-top: 30%;
+  margin-top: 30vh;
   justify-content: center;
   .title {
     font-family: "Nekst-Black";
@@ -22,7 +21,21 @@
     color: #575757;
   }
 }
-.links{
-    display: flex;
-    justify-content: center;
+.links {
+  display: flex;
+  justify-content: center;
+}
+
+@media (max-width: 767px) {
+  .container {
+    .title {
+      font-family: "Nekst-Black";
+      font-style: normal;
+      font-weight: 900;
+      font-size: 26px;
+      line-height: 20px;
+
+      color: #111111;
+    }
+  }
 }

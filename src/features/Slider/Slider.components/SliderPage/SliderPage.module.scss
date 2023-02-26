@@ -1,11 +1,11 @@
 .container {
-    height: 473px;
-    width: 100%;
+  height: 473px;
+  width: 100%;
   background-color: #000;
   border-radius: 32px;
   padding: 70px;
-    background-image: url("../../../../assets/BgForSlider.jpg");
-    background-repeat: no-repeat;
+  background-image: url("../../../../assets/BgForSlider.jpg");
+  background-repeat: no-repeat;
   background-position: right;
   .content {
     max-width: 585px;
@@ -18,12 +18,24 @@
       line-height: 90%;
       color: #fff;
     }
-    .h3{
-        margin-top: 32px;
-        color: #fff;
+    .h3 {
+      margin-top: 32px;
+      color: #fff;
     }
-    .btn{
-       margin-top: 32px;
+    .btn {
+      margin-top: 32px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    background-position: 50% -100%;
+    .content {
+      margin-top: 165px;
+    }
+    .h3 {
+      display: none;
     }
   }
 }

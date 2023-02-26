@@ -1,0 +1,101 @@
+@import "../../styles/variables.scss";
+.burgerMenuContainer {
+  display: none;
+}
+@media (max-width: 1024px) {
+  .burgerMenuContainer {
+    cursor: pointer;
+    display: block;
+    height: 30px;
+  }
+  .burgerMenuElements,
+  .burgerMenuElements::before,
+  .burgerMenuElements::after {
+    display: block;
+    width: 32px;
+    height: 3px;
+    background-color: #000;
+    border-radius: 2px;
+    float: right;
+  }
+  .burgerMenuElements {
+    display: block;
+
+    width: 20px;
+    margin-bottom: 5px;
+    position: relative;
+    &::before {
+      content: "";
+      top: 8px;
+      position: absolute;
+      width: 20px;
+    }
+    &::after {
+      content: "";
+      top: 16px;
+      position: absolute;
+      width: 16px;
+    }
+  }
+  .burgerMenuModal {
+    transition: $transition;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    right: 0;
+    z-index: 3;
+  }
+  .burgerContent {
+    position: absolute;
+    width: 80%;
+    height: 100vh;
+    z-index: 3;
+    background: #fff;
+    padding: 20px;
+    transition: all 0.3s ease;
+    right: 0;
+    .cross {
+      position: relative;
+      height: 32px;
+      width: 32px;
+      float: right;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 10%;
+        background-color: black;
+        border-radius: 3px;
+      }
+
+      &::before {
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  .burgerClosed {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    padding: 20px;
+    transition: all 0.3s ease;
+  }
+}
+@media (max-width: 767px) {
+  .burgerMenuElements,
+  .burgerMenuElements::before,
+  .burgerMenuElements::after {
+    background-color: #fff;
+  }
+}

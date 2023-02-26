@@ -1,4 +1,9 @@
+import React from 'react'
 import './Slider.scss'
+
+
+
+
 
 export const settings = {
     customPaging: function (i: number) {

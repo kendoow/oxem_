@@ -20,7 +20,9 @@
   .inputContainer {
     position: relative;
     width: 311px;
-
+    .errorInput {
+      border: 1px solid red !important;
+    }
     .input {
       box-sizing: border-box;
       padding: 24px;
@@ -34,6 +36,7 @@
       line-height: 24px;
       border: 1px solid #fff;
       transition: $transition;
+
       &:focus ~ .inputPlaceholder {
         display: block;
       }
@@ -54,6 +57,58 @@
       &:disabled {
         opacity: 0.4;
       }
+    }
+  }
+}
+.error {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  top: 70px;
+  left: 10px;
+  position: absolute;
+  color: #d53234;
+}
+.containerBlock {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 29px;
+  border: 2px solid #f3f3f4;
+  border-radius: 16px;
+  .description {
+    max-width: 350px;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    .link {
+      color: #000;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+    .logoBlock {
+      &Decription {
+        display: none;
+      }
+    }
+  }
+  .containerBlock {
+    border: none;
+    flex-direction: column;
+    padding: 0;
+    .description {
+      margin-top: 16px;
     }
   }
 }

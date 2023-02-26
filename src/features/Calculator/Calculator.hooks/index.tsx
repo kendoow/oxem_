@@ -5,7 +5,8 @@ export const useCalculator = () => {
     const [price, setPrice] = useState<number>(3300000)
     const [percents, setPercents] = useState(10)
     const [initialPayment, setInitialPayment] = useState(330000)
-
+    const [initialMinPay, setInitialMin] = useState(100000)
+    const [initialMaxPay, setInitialMax] = useState(600000)
     const [duration, setDuration] = useState(60)
     const [overallAmount, setOverallAmount] = useState(0)
     const [monthPay, setMonthPay] = useState(0)
@@ -22,7 +23,19 @@ export const useCalculator = () => {
             setMonthPay(newMonthPayState)
             setOverallAmount(newOverallAmountState)
         }
+        if (price < 1000000) {
+            setPrice(1000000)
+        } 
+         if (price > 6000000) {
+            setPrice(6000000)
+        }
 
+
+        if (duration >= 60) {
+            setDuration(60)
+        } else if (duration <= 1) {
+            setDuration(1)
+        }
     }, [price, initialPayment, duration, percents])
 
     useEffect(() => {
@@ -31,7 +44,22 @@ export const useCalculator = () => {
 
         setInitialPayment(newinitialPayment)
         setPercents(newpercent)
-    }, [price])
+        if (percents < 10) {
+
+            setInitialPayment(+((price * 10) / 100).toFixed())
+            setPercents(10)
+        }  if (percents > 60) {
+
+            setInitialPayment(+((price * 60) / 100).toFixed())
+            setPercents(60)
+        }
+        setInitialMin(
+            +((price * 10) / 100).toFixed()
+        )
+        setInitialMax(
+            +((price * 60) / 100).toFixed()
+        )
+    }, [price, percents])
 
     useEffect(() => {
         setPercents(toPersents(initialPayment, price))
@@ -50,6 +78,8 @@ export const useCalculator = () => {
         setOverallAmount,
         monthPay,
         setMonthPay,
+        initialMinPay,
+        initialMaxPay
     }
 }
 

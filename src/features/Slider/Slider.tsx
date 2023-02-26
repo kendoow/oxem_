@@ -7,17 +7,13 @@ import { SliderPage } from './Slider.components/SliderPage/SliderPage'
 
 
 
-
-
 const GlobalSlider = () => {
     return (
         <div className={styles.container}>
             <Slider {...settings}>
-
                 {PagesData.map((el) => {
                     return <SliderPage key={el.desription} title={el.title} desription={el.desription} main={el.main} />
                 })}
-
             </Slider>
         </div>
     )

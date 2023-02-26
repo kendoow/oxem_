@@ -6,6 +6,8 @@ import { Title } from '../../components/Title/Title'
 import { FormInputs } from './Form.components/FormInputs/FormInputs'
 import { FormSubmit } from './Form.components/FormSubmit/FormSubmit'
 import { FormLinks } from './Form.components/FormLinks/FormLinks'
+
+
 export const Form = ({ active, setActive }: IFromProps) => {
 
 
@@ -20,12 +22,10 @@ export const Form = ({ active, setActive }: IFromProps) => {
                 <p className={styles.description}>
                     Заполните форму, и мы вскоре свяжемся с вами, чтобы ответить на все вопросы
                 </p>
-                <FormInputs />
-                <FormSubmit />
-                <div className={styles.links}>
+                <FormInputs setActive = {setActive}/>
 
-               
-                <FormLinks /> 
+                <div className={styles.links}>
+                    <FormLinks />
                 </div>
             </div>
 

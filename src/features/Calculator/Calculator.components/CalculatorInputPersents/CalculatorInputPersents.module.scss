@@ -1,0 +1,84 @@
+@import "../../../../styles/variables.scss";
+.calculator {
+  &Input {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  &Title {
+    color: $dark-grey;
+    font-family: "Gilroy";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 24px;
+  }
+  .container {
+    position: relative;
+    
+  }
+  &Number {
+    width: 100%;
+    background-color: $dark-white;
+    color: $dark-grey;
+    font-family: "Nekst-Black";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 36px;
+    border-radius: 16px;
+    padding: 16px 24px;
+  }
+
+  &Range {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 2px;
+    background-color: $orange;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    margin-left: 24px;
+    &::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $orange;
+      cursor: pointer;
+
+      left: calc(50% - 10px);
+      transition: $transition;
+      &:hover{
+        transition: $transition;
+        transform: scale(1.1);
+      }
+    }
+  
+  }
+
+  &Sign {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px;
+    height: 54px;
+    width: 70px;
+    right: 7px;
+    top: 50px;
+    font-family: "Nekst-Black";
+    font-style: normal;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 120%;
+    background: #EBEBEC;
+    text-align: right;
+
+    color: #575757;
+  }
+}
