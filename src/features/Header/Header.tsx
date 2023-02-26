@@ -47,6 +47,7 @@ export const Header = () => {
                 <p className={styles.logoBlockDecription}>лизинговая компания</p>
             </div>
             <BurgerMenu>
+
                 <div className={styles.links} ref={ref}>
                     <div className={styles.linksBlock}>
                         {
